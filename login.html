@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Portfolio</title>
+  <link type="text/css" rel="stylesheet" href="css/base.css">
+  <link type="text/css" rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+  <div class="login-page-wrapper">
+    <div class="login-container">
+      <h1>Acceso Dashboard</h1>
+      <form id="loginForm">
+        <div>
+          <input type="text" id="username" name="username" placeholder="Usuario" required>
+        </div>
+        <div>
+          <input type="password" id="password" name="password" placeholder="Contraseña" required>
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+      <div id="errorMessage" class="error-message"></div>
+    </div>
+  </div>
+
+  <script src="scripts/effects.js"></script> <!-- Añadido para la inicialización de efectos base -->
+
+  <script>
+    // IMPORTANTE: Reemplaza con la IP y puerto correctos de tu backend en la VM
+    const BACKEND_IP = '127.0.0.1'; // Ejemplo: '192.168.1.100'
+    const BACKEND_PORT = '8000'; // El puerto donde corre tu FastAPI en la VM
+    const LOGIN_ENDPOINT = `http://${BACKEND_IP}:${BACKEND_PORT}/api/v1/auth/token`;
+    const DASHBOARD_URL = 'dashboard.html'; // La URL a la que redirigir tras login exitoso
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginForm = document.getElementById('loginForm');
+      const errorMessageDiv = document.getElementById('errorMessage');
+
+      // Limpiar mensajes de error de intentos anteriores o de parámetros URL
+      errorMessageDiv.textContent = '';
+      errorMessageDiv.style.display = 'none';
+
+      loginForm.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Evita el envío tradicional del formulario
+        errorMessageDiv.textContent = '';
+        errorMessageDiv.style.display = 'none';
+
+        const username = loginForm.username.value;
+        const password = loginForm.password.value;
+
+        // FastAPI espera los datos del login como FormData (OAuth2PasswordRequestForm)
+        const formData = new FormData();
+        formData.append('username', username);
+        formData.append('password', password);
+
+        try {
+          const response = await fetch(LOGIN_ENDPOINT, {
+            method: 'POST',
+            body: formData, // No necesitas 'Content-Type': 'application/x-www-form-urlencoded' explícitamente con FormData
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            // Almacena el token de forma segura. localStorage es común, pero considera HttpOnly cookies para mayor seguridad si puedes configurarlas.
+            localStorage.setItem('accessToken', data.access_token);
+            localStorage.setItem('tokenType', data.token_type);
+
+            // Redirige al dashboard
+            window.location.href = DASHBOARD_URL;
+          } else {
+            const errorData = await response.json();
+            let detailMessage = 'Error desconocido.';
+            if (errorData && errorData.detail) {
+              if (typeof errorData.detail === 'string') {
+                detailMessage = errorData.detail;
+              } else if (Array.isArray(errorData.detail) && errorData.detail.length > 0 && errorData.detail[0].msg) {
+                // Para errores de validación de Pydantic
+                detailMessage = errorData.detail[0].msg;
+              }
+            } else if (response.status === 401) {
+              detailMessage = 'Usuario o contraseña incorrectos.';
+            } else {
+              detailMessage = `Error: ${response.status} - ${response.statusText}`;
+            }
+            errorMessageDiv.textContent = detailMessage;
+            errorMessageDiv.style.display = 'block';
+          }
+        } catch (error) {
+          console.error('Error en la petición de login:', error);
+          errorMessageDiv.textContent = 'No se pudo conectar con el servidor. Verifica la conexión o la URL del backend.';
+          errorMessageDiv.style.display = 'block';
+        }
+      });
+    });
+  </script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./build/three.webgpu.js",
+        "three/webgpu": "./build/three.webgpu.js",
+        "three/tsl": "./build/three.tsl.js",
+        "three/addons/": "./jsm/"
+      }
+    }
+  </script>
+  <!-- Script para el efecto de lluvia de fondo -->
+  <script type="module" src="scripts/threejs-app.js"></script>
+</body>
+
+</html>

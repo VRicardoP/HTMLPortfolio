@@ -1,0 +1,49 @@
+/* Archivo principal de ventanas flotantes */
+/* Importa todos los módulos de estilos */
+
+@import url('./window-base.css');
+@import url('./window-variants.css');
+@import url('./window-controls.css');
+@import url('./window-resize.css');
+@import url('./window-animations.css');
+@import url('./chat-system.css');
+
+/* Estructura de archivos creada:
+1. window-base.css (Estilos fundamentales)
+
+.floating-window - Clase base para todas las ventanas
+.window-content - Contenido interno de las ventanas
+.window-title - Títulos de las ventanas
+
+2. window-variants.css (Tipos específicos de ventana)
+
+.cv-window, .portfolio-window, .skills-window, .contact-window
+Dimensiones específicas para cada tipo de ventana
+
+3. window-controls.css (Controles y estados)
+
+.window-header - Barra superior de las ventanas
+.control-btn - Botones de control (minimizar/maximizar)
+.window-collapsed - Estado colapsado de ventanas
+.window-maximized - Estado maximizado de ventanas
+Todos los estilos hover y de interacción
+
+4. window-resize.css (Sistema de redimensionamiento)
+
+Todos los .resize-handle-* (esquinas y bordes)
+Cursores de redimensionamiento
+Efectos visuales al hacer hover
+Ocultación en ventanas colapsadas
+
+5. window-animations.css (Animaciones y efectos)
+
+@keyframes pulse-border y cascade-appear
+Animaciones de aparición
+Efectos hover para ventanas
+
+6. chat-system.css (Sistema de chat completo)
+
+Área de mensajes, estilos de mensajes de bot/usuario
+Input de chat y botón de envío
+Contenedor de chat y área de entrada
+Estilos de escritura del bot */

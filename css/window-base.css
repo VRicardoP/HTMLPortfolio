@@ -1,0 +1,42 @@
+/* Estilo base para todas las ventanas flotantes */
+.floating-window {
+  position: fixed;
+  width: 400px;
+  height: 300px;
+  border: 4px solid #00ffff;
+  border-radius: 10px;
+  /* Efecto vidrio transparente */
+  background-color: rgba(0, 255, 255, 0.05);
+  backdrop-filter: blur(1px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  transition: all 0.8s ease-in-out;
+  cursor: default;
+  overflow: hidden;
+  z-index: 100;
+  /* Asegurar que sea clickeable */
+  pointer-events: auto;
+}
+
+.window-content {
+  padding: 20px;
+  color: #D3D3D3;
+  text-shadow: 0 0 10px rgba(211, 211, 211, 0.3);
+  text-align: left;
+  /* user-select: none; */
+  pointer-events: auto;
+  font-weight: normal;
+  height: calc(100% - 40px);
+  box-sizing: border-box;
+}
+
+.window-title {
+  /* Añadir flex-grow para que tome el espacio restante */
+  flex-grow: 1;
+  order: 2;
+  font-size: 25px;
+  margin-bottom: 0;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-weight: bold;
+}

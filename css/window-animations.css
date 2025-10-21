@@ -1,0 +1,37 @@
+/* Añadir animación de pulso al borde */
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+  }
+}
+
+/* Animación inicial para ventanas en cascada */
+@keyframes cascade-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.floating-window:not(.window-collapsed):not(.window-maximized) {
+  animation: cascade-appear 0.8s ease-out forwards;
+}
+
+/* Efecto hover para ventanas no colapsadas */
+.floating-window:not(.window-collapsed):not(.window-maximized):hover {
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+  border-color: rgba(0, 255, 255, 0.9);
+}

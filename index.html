@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Portfolio | Vicente R. Pau</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="css/base.css">
+  <link type="text/css" rel="stylesheet" href="css/windows-main.css">
+  <link type="text/css" rel="stylesheet" href="css/components.css">
+  <link type="text/css" rel="stylesheet" href="css/static-window.css">
+</head>
+
+<body>
+
+  <!-- Título principal del portfolio -->
+  <h1 class="main-title">
+    <span id="typewriter-text" class="typewriter-container"></span>
+    <span class="terminal-cursor"></span>
+  </h1>
+
+  <!-- Ventana de Profile -->
+  <div id="profileWindow" class="floating-window profile-window">
+    <div class="window-header">
+      <div class="window-controls">
+        <div class="control-btn control-minimize" onclick="toggleMinimize('profileWindow')"></div>
+        <div class="control-btn control-maximize" onclick="toggleMaximize('profileWindow')"></div>
+      </div>
+      <div class="window-title">Profile</div>
+    </div>
+    <div class="window-content">
+      <div class="scroll-container">
+        <div class="section">
+          <div class="cv-card">
+            <div class="entry-description">
+              By vocation, I started as a programmer; however, professionally, I manage networks and IT systems
+              (Windows, Linux, and Mac).
+              I am continuously training in programming to stay current, and I have gained extensive experience working
+              as a System Administrator
+              in data centers supporting environments with over 1,000 terminals, such as hospitals or supermarket chains
+              like Mercadona.
+              I am responsible for system maintenance, administration, and security, which provides me with broad
+              knowledge to handle any
+              organizational needs connected to IT systems.
+            </div>
+            <div class="entry-subtitle" style="margin-top: 10px;">
+              📧 vicente.pau@hotmail.com | 📍 Valencia, Spain
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana de Soft Skills -->
+  <div id="softSkillsWindow" class="floating-window soft-skills-window">
+    <div class="window-header">
+      <div class="window-controls">
+        <div class="control-btn control-minimize" onclick="toggleMinimize('softSkillsWindow')"></div>
+        <div class="control-btn control-maximize" onclick="toggleMaximize('softSkillsWindow')"></div>
+      </div>
+      <div class="window-title">Soft Skills</div>
+    </div>
+    <div class="window-content">
+      <div class="scroll-container">
+        <div class="section">
+          <div class="cv-card">
+            <div class="entry-description">
+              Committed, Critical thinking, Integrity, Empathy, Fearless in conflict, Desire to learn,
+              Teamwork, Initiative, Stress management, Adaptability, Problem-solving, Communication, Motivated
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana de Education -->
+  <div id="educationWindow" class="floating-window education-window">
+    <div class="window-header">
+      <div class="window-controls">
+        <div class="control-btn control-minimize" onclick="toggleMinimize('educationWindow')"></div>
+        <div class="control-btn control-maximize" onclick="toggleMaximize('educationWindow')"></div>
+      </div>
+      <div class="window-title">Education</div>
+    </div>
+    <div class="window-content">
+      <div class="scroll-container">
+        <div class="section">
+          <div class="cv-card">
+            <div class="entry-title">Bachelor's Degree in Web Application Development</div>
+            <div class="entry-subtitle">Currently pursuing</div>
+            <div class="entry-description">
+              Multiplatform Application Development focus
+            </div>
+          </div>
+
+          <div class="cv-card">
+            <div class="entry-title">Bootcamp React</div>
+            <div class="entry-subtitle">Geekshubs</div>
+            <div class="entry-date">2023</div>
+            <div class="entry-description">
+              Topics covered: Linux, Python, Java, HTML5, CSS3, SQL, XML, Database Design, Virtualization,
+              Git, JavaScript, Node.js, PHP, Odoo, Network Administration
+            </div>
+          </div>
+
+          <div class="cv-card">
+            <div class="entry-title">Management Informatics</div>
+            <div class="entry-subtitle">Polytechnic University of Valencia</div>
+            <div class="entry-date">2003 - 2005</div>
+          </div>
+
+          <div class="cv-card">
+            <div class="entry-title">Server Administration Course</div>
+            <div class="entry-date">2002 – 2003</div>
+          </div>
+
+          <div class="cv-card">
+            <div class="entry-title">Multimedia, Video Editing, and Web Design Course</div>
+            <div class="entry-date">2000 - 2001</div>
+          </div>
+
+          <div class="cv-card">
+            <div class="entry-title">Specialist Technician in Management Informatics</div>
+            <div class="entry-date">1997 – 2000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana de Experience -->
+  <div id="experienceWindow" class="floating-window experience-window">
+    <div class="window-header">
+      <div class="window-controls">
+        <div class="control-btn control-minimize" onclick="toggleMinimize('experienceWindow')"></div>
+        <div class="control-btn control-maximize" onclick="toggleMaximize('experienceWindow')"></div>
+      </div>
+      <div class="window-title">Experience</div>
+    </div>
+    <div class="window-content">
+      <div class="scroll-container">
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <div class="portfolio-title">Technical Support Specialist</div>
+            <div class="portfolio-tech">Centro Gestión Red Arterias — Telefónica / Department of Health (Valencia)</div>
+            <div class="entry-date">2020–2021</div>
+            <div class="entry-description">
+              Support for hospitals and health centers within the Department of Sanitation in Alicante, Castellón, and
+              Valencia. Ticket management via custom applications, email, Jira, and Confluence. Management of Routers,
+              Firewalls,
+              and VPNs Cisco and Fortigate. Use of communication tools like Microsoft Teams.
+              <br><br>
+              For more details please ask Kusanagi.
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-title">Support Specialist</div>
+            <div class="portfolio-tech">DHL Supply Chain (Valencia)</div>
+            <div class="entry-date">2020–2021</div>
+            <div class="entry-description">
+              Remote support for Ford European LLP users in Spain, Germany, England, and Hungary. Management of Active
+              Directory
+              user permissions. Resolving VPN and remote access issues. Basic management of European plant databases.
+              Ticketing (Jira) and remote communication channels (Cisco, Teams). Remote administration of virtualized
+              environments in India.
+              <br><br>
+              For more details please ask Kusanagi.
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-title">Support Helpdesk Technician</div>
+            <div class="portfolio-tech">Tecnocom / Ford (Valencia)</div>
+            <div class="entry-date">2016</div>
+            <div class="entry-description">
+              Data Center operator and administrator for Ford's engine plant. Backup oversight and automated system
+              installations.
+              System updates and upgrades. Remote virtualization management (ESXi, Windows, Linux).
+              <br><br>
+              For more details please ask Kusanagi.
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-title">Systems Administrator</div>
+            <div class="portfolio-tech">Postres Romar / Valencia</div>
+            <div class="entry-date">2016–2018</div>
+            <div class="entry-description">
+              Responsible for security systems implementation (Cisco, Sophos). Supporting Java development. Management
+              of Microsoft databases. Redesign and deployment of a new data center, increasing performance by 60%.
+              Backup management with
+              Synology systems. Deployment and maintenance of Windows and Linux systems. Virtualization installations
+              (ESXi, Windows,
+              Linux). VPN and Active Directory administration.
+              <br><br>
+              For more details please ask Kusanagi.
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-title">Computer Operator</div>
+            <div class="portfolio-tech">Tecnocom / Mercadona / Valencia</div>
+            <div class="entry-date">2016</div>
+            <div class="entry-description">
+              Data Center administration and operation. Infrastructure monitoring with HP OVO software. Automated system
+              control
+              using Axway Automata. User credential management for access to facilities and systems across Spain.
+              Second-level
+              incident support via phone. Backup management with HP DataProtector and CommVault.
+              <br><br>
+              For more details please ask Kusanagi.
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-title">Data Center and Systems Administrator</div>
+            <div class="portfolio-tech">SII Concatel / Valencia</div>
+            <div class="entry-date">2015</div>
+            <div class="entry-description">
+              Network administration and maintenance. User support within the organization. Active Directory user
+              management.
+              <br><br>
+              For more details please ask Kusanagi.
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-title">Systems Administrator and Technician</div>
+            <div class="portfolio-tech">VSL Support Ltd / England</div>
+            <div class="entry-date">2013–2015</div>
+            <div class="entry-description">
+              Managed and configured IT systems and networks for various clients across southern England, including
+              hospitals,
+              restaurant chains, hotels, and franchise workshops. Application setup: Active Directory, Terminal Server,
+              Citrix,
+              Microsoft Office suites. Junior Developer in Java, Node.js, and JavaScript.
+              <br><br>
+              For more details please ask Kusanagi.
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-title">Web Developer and Administrator</div>
+            <div class="portfolio-tech">Design Queen / New Zealand</div>
+            <div class="entry-date">2011–2012</div>
+            <div class="entry-description">
+              Junior Developer in Java, HTML, CSS, JavaScript. Website management and support. Website design and
+              creation
+              for clients. FTP server setup and management.
+              <br><br>
+              For more details please ask Kusanagi.
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-title">Administrator and Technician</div>
+            <div class="portfolio-tech">Hospital de la Ribera / Alzira</div>
+            <div class="entry-date">2009–2011</div>
+            <div class="entry-description">
+              Managed hospital IT systems during night shifts. HelpDesk incident support. Use of Citrix, Microsoft
+              Office,
+              and Exchange. Active Directory user management. Backup execution. Virtual systems administration
+              (Windows and Linux). Remote equipment control via Terminal Server.
+              <br><br>
+              For more details please ask Kusanagi.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana de Languages -->
+  <div id="languagesWindow" class="floating-window languages-window">
+    <div class="window-header">
+      <div class="window-controls">
+        <div class="control-btn control-minimize" onclick="toggleMinimize('languagesWindow')"></div>
+        <div class="control-btn control-maximize" onclick="toggleMaximize('languagesWindow')"></div>
+      </div>
+      <div class="window-title">Languages</div>
+    </div>
+    <div class="window-content">
+      <div class="scroll-container">
+        <div class="section">
+          <div class="cv-card">
+            <div class="entry-title">Spanish</div>
+            <div class="entry-description">Native</div>
+          </div>
+
+          <div class="cv-card">
+            <div class="entry-title">English</div>
+            <div class="entry-description">Advanced / Bilingual</div>
+          </div>
+
+          <div class="cv-card">
+            <div class="entry-title">Italian</div>
+            <div class="entry-description">Beginner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana de Tech Skills -->
+  <div id="techSkillsWindow" class="floating-window tech-skills-window">
+    <div class="window-header">
+      <div class="window-controls">
+        <div class="control-btn control-minimize" onclick="toggleMinimize('techSkillsWindow')"></div>
+        <div class="control-btn control-maximize" onclick="toggleMaximize('techSkillsWindow')"></div>
+      </div>
+      <div class="window-title">Tech Skills</div>
+    </div>
+    <div class="window-content">
+      <div class="scroll-container">
+        <div class="section">
+          <div class="section-title">FRONTEND</div>
+
+          <div class="entry-title">HTML5 / CSS3</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 98%"></div>
+          </div>
+
+          <div class="entry-title">JavaScript / TypeScript</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 95%"></div>
+          </div>
+
+          <div class="entry-title">React / Vue.js</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 90%"></div>
+          </div>
+
+          <div class="entry-title">Three.js / WebGL</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">BACKEND</div>
+
+          <div class="entry-title">Node.js / Express</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 88%"></div>
+          </div>
+
+          <div class="entry-title">Python / Django</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 80%"></div>
+          </div>
+
+          <div class="entry-title">GraphQL / REST</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">DATABASES</div>
+
+          <div class="entry-title">MongoDB</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 92%"></div>
+          </div>
+
+          <div class="entry-title">PostgreSQL</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 85%"></div>
+          </div>
+
+          <div class="entry-title">Redis</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 75%"></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">OTROS</div>
+
+          <div class="entry-title">Git / GitHub</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 95%"></div>
+          </div>
+
+          <div class="entry-title">Docker / Kubernetes</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 80%"></div>
+          </div>
+
+          <div class="entry-title">AWS / Azure</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 82%"></div>
+          </div>
+
+          <div class="entry-title">VMWare / ESXi</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 90%"></div>
+          </div>
+
+          <div class="entry-title">Windows Server / Linux</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 95%"></div>
+          </div>
+
+          <div class="entry-title">Network Security (Cisco, Sophos)</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 88%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana de Portfolio -->
+  <div id="portfolioWindow" class="floating-window portfolio-window">
+    <div class="window-header">
+      <div class="window-controls">
+        <div class="control-btn control-minimize" onclick="toggleMinimize('portfolioWindow')"></div>
+        <div class="control-btn control-maximize" onclick="toggleMaximize('portfolioWindow')"></div>
+      </div>
+      <div class="window-title">Portfolio</div>
+    </div>
+    <div class="window-content">
+      <div class="scroll-container">
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <div class="portfolio-title">Cyberpunk Dashboard</div>
+            <div class="portfolio-tech">Three.js / WebGL / React</div>
+            <div class="entry-description">
+              Panel de control con visualizaciones de datos en tiempo real con estética cyberpunk.
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-title">Neural Network Visualizer</div>
+            <div class="portfolio-tech">D3.js / TensorFlow.js</div>
+            <div class="entry-description">
+              Herramienta interactiva para visualizar y entender redes neuronales.
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-title">Data Flow</div>
+            <div class="portfolio-tech">WebGL / Canvas / Vue.js</div>
+            <div class="entry-description">
+              Visualización de flujo de datos con partículas interactivas.
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-title">Virtual Museum</div>
+            <div class="portfolio-tech">Three.js / A-Frame</div>
+            <div class="entry-description">
+              Experiencia de museo virtual con navegación 3D inmersiva.
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-title">Digital Rain</div>
+            <div class="portfolio-tech">WebGPU / Shaders</div>
+            <div class="entry-description">
+              Recreación de efecto "lluvia digital" con tecnología WebGPU.
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-title">Audio Spectrum</div>
+            <div class="portfolio-tech">Web Audio API / Canvas</div>
+            <div class="entry-description">
+              Visualizador de audio reactivo con estética futurista.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana de Contacto -->
+  <div id="contactWindow" class="floating-window contact-window">
+    <div class="window-header">
+      <div class="window-controls">
+        <div class="control-btn control-minimize" onclick="toggleMinimize('contactWindow')"></div>
+        <div class="control-btn control-maximize" onclick="toggleMaximize('contactWindow')"></div>
+      </div>
+      <div class="window-title">Contact</div>
+    </div>
+    <div class="window-content">
+      <div class="entry-description">
+        ¿Interesado en colaborar en un proyecto? Contáctame vía email:
+      </div>
+
+      <div class="entry-title" style="margin-top: 15px;">vicente.pau@hotmail.com</div>
+
+      <div class="contact-icons">
+        <div class="contact-icon">
+          <div style="color: #00ffff; font-size: 20px;">in</div>
+        </div>
+        <div class="contact-icon">
+          <div style="color: #00ffff; font-size: 20px;">gh</div>
+        </div>
+        <div class="contact-icon">
+          <div style="color: #00ffff; font-size: 20px;">tw</div>
+        </div>
+        <div class="contact-icon">
+          <div style="color: #00ffff; font-size: 20px;">ig</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana de Chat con IA -->
+  <div id="chatWindow" class="floating-window chat-window">
+    <div class="window-header">
+      <div class="window-controls">
+        <div class="control-btn control-minimize" onclick="toggleMinimize('chatWindow')"></div>
+        <div class="control-btn control-maximize" onclick="toggleMaximize('chatWindow')"></div>
+      </div>
+      <div class="window-title">Kusanagi</div>
+    </div>
+    <div class="window-content">
+      <div class="chat-container">
+        <div id="chatMessages" class="chat-messages-area">
+          <!-- Mensaje inicial del bot -->
+          <div class="chat-message bot-message">
+            <p>¡Hi there! I'm Kusanagi! Do you have any questions about Vicente Pau?</p>
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <input type="text" id="chatInput" placeholder="Type your message here..." aria-label="Mensaje para el chat">
+          <button id="sendChatButton" aria-label="Enviar mensaje">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana de Bienvenida (Aparece al cargar la página) -->
+  <div id="infoWindow" class="static-centered-window">
+    <div class="window-header">
+      <div class="window-title">🚀 Bienvenido a mi Portfolio</div>
+      <div class="window-controls">
+        <button id="infoWindowCloseButton" class="window-control-button" onclick="closeWindow('infoWindow')">×</button>
+      </div>
+    </div>
+    <div class="window-content">
+      <div class="scroll-container">
+        <p><strong>¡Hola! Soy Vicente R. Pau</strong></p>
+        <p>Este portfolio interactivo simula un entorno de ventanas flotantes. Puedes:</p>
+        <ul>
+          <li><strong>Minimizar/Maximizar:</strong> Usa los botones púrpura y amarillo</li>
+          <li><strong>Arrastrar:</strong> Haz clic en la barra superior de cualquier ventana</li>
+          <li><strong>Redimensionar:</strong> Arrastra desde las esquinas y bordes</li>
+          <li><strong>Chat con IA:</strong> Pregunta a Kusanagi sobre mi experiencia</li>
+        </ul>
+        <p>Explora las diferentes secciones para conocer más sobre mi trabajo y habilidades, y cualquier duda pregúntale
+          a Kusanagi.
+        </p>
+        <p style="margin-top: 20px; font-size: 16px; color: #888;">Cierra esta ventana para comenzar. Botón rojo de la
+          esquina superior derecha.</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./build/three.webgpu.js",
+        "three/webgpu": "./build/three.webgpu.js",
+        "three/tsl": "./build/three.tsl.js",
+        "three/addons/": "./jsm/"
+      }
+    }
+  </script>
+
+  <!-- Nuevo script para la ventana de información -->
+  <script>
+    // Script de inicialización para la ventana de información
+    function initInfoWindow() {
+      const infoWindow = document.getElementById('infoWindow');
+
+      if (infoWindow) {
+        // Asegurar que la ventana esté visible al cargar
+        infoWindow.style.display = 'block';
+        infoWindow.style.opacity = '1';
+
+        // Añadir esta ventana a una lista de ventanas excluidas del sistema de reorganización
+        if (!window.excludedWindows) {
+          window.excludedWindows = [];
+        }
+        window.excludedWindows.push('infoWindow');
+      }
+    }
+
+    // Ejecutar cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', initInfoWindow);
+  </script>
+
+  <script type="module" src="scripts/windows_main.js"></script>
+  <script src="scripts/toast.js"></script>
+  <script src="scripts/chat.js"></script>
+  <script type="module" src="scripts/threejs-app.js"></script>
+  <script src="scripts/geo.js"></script>
+
+
+</body>
+
+</html>

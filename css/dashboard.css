@@ -1,0 +1,156 @@
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stat-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  min-width: 200px;
+  background-color: var(--window-bg-color, #f9f9f9);
+  color: var(--text-color, #333);
+}
+
+.stat-card h3 {
+  margin-top: 0;
+  color: var(--window-header-color, #333);
+}
+
+#map-container {
+  width: 100%;
+  height: 450px;
+  background-color: #f0f0f0;
+}
+
+#map-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* Estilos para la tabla de visitantes recientes */
+#recent-visitors-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#recent-visitors-table th,
+#recent-visitors-table td {
+  border: 1px solid var(--table-border-color, #ddd);
+  padding: 8px;
+  text-align: left;
+}
+
+#recent-visitors-table th {
+  background-color: var(--table-header-bg-color, #f2f2f2);
+  color: var(--window-header-color, #333);
+}
+
+#recent-visitors-table tbody tr:nth-child(even) {
+  background-color: var(--table-row-even-bg-color, #f9f9f9);
+}
+
+#recent-visitors-table tbody tr:hover {
+  background-color: var(--table-row-hover-bg-color, #e2e2e2);
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* Estilos específicos para la ventana del mapa */
+.map-window {
+  display: flex;
+  flex-direction: column;
+}
+
+.map-window .window-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Cuando la ventana esté maximizada */
+.map-window.maximized {
+  height: 100vh;
+}
+
+.map-window.maximized .window-content {
+  height: calc(100vh - 50px);
+}
+
+/* Hacer que el contenedor del mapa ocupe todo el espacio disponible */
+.map-window #map-container {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* Corregir el comportamiento de la ventana del mapa cuando está minimizada */
+.map-window.window-collapsed {
+  /* Forzar que use los estilos de ventana colapsada estándar */
+  display: flex !important;
+  flex-direction: row !important;
+  height: 40px !important;
+  width: 180px !important;
+  align-items: center !important;
+}
+
+.map-window.window-collapsed .window-content {
+  /* Asegurar que el contenido se oculte cuando está minimizada */
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  padding: 0 !important;
+  flex: none !important;
+}
+
+.map-window.window-collapsed .window-header {
+  /* Restablecer el header para ventana minimizada */
+  flex-shrink: 0 !important;
+  border-bottom: none !important;
+  height: auto !important;
+  width: 100% !important;
+  padding: 0 15px !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+.map-window.window-collapsed .window-title {
+  /* Restablecer el título para ventana minimizada */
+  font-size: 16px !important;
+  margin: 0 !important;
+  color: #D3D3D3 !important;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8) !important;
+  text-align: center !important;
+  padding-right: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  line-height: 1 !important;
+  flex-grow: 1 !important;
+  order: 2 !important;
+}
+
+.map-window.window-collapsed .window-controls {
+  /* Restablecer los controles para ventana minimizada */
+  position: static !important;
+  transform: none !important;
+  margin-right: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  order: 1 !important;
+  gap: 6px !important;
+}
+
+/* Asegurar que #map-container no interfiera cuando está minimizada */
+.map-window.window-collapsed #map-container {
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+}

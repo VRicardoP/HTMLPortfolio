@@ -1,0 +1,166 @@
+/* Barra superior con botones de minimizar */
+.window-header {
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+}
+
+.window-header:active {
+  cursor: grabbing;
+}
+
+.window-controls {
+  display: flex;
+  gap: 6px;
+  /* Asegura que siempre estén a la izquierda */
+  order: 1;
+}
+
+.control-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.2s ease;
+}
+
+/* Efecto de iluminación adicional para los botones de control al hover */
+.control-btn:hover {
+  transform: scale(1.2);
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.8),
+    0 0 12px currentColor;
+}
+
+.control-minimize:hover {
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+}
+
+.control-maximize:hover {
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
+}
+
+.control-minimize {
+  background-color: #8A2BE2;
+}
+
+.control-maximize {
+  background-color: #FFCC00;
+}
+
+/* Ventana colapsada - Estilo de menú horizontal */
+.window-collapsed {
+  height: 40px !important;
+  width: 180px !important;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: rgba(0, 255, 255, 0.1) !important;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  /* Asegurar que el contenido esté centrado verticalmente */
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos adicionales para los botones de control en la ventana colapsada */
+.window-collapsed .control-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.2s ease;
+  position: relative;
+  top: 0;
+  /* Asegurar que no haya desplazamiento vertical */
+}
+
+.window-collapsed .window-header {
+  border-bottom: none;
+  height: auto;
+  width: 100%;
+  padding: 0 15px;
+  /* Centrar elementos horizontalmente */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.window-collapsed .window-content {
+  /* Ocultar contenido cuando está colapsada */
+  pointer-events: none;
+  opacity: 0;
+  display: none;
+  /* Ocultar completamente */
+}
+
+.window-collapsed .window-title {
+  font-size: 16px;
+  margin: 0;
+  color: #D3D3D3;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+  /* Mantiene el texto centrado en su espacio */
+  text-align: center;
+  /* Añadir padding a la izquierda para separar del borde */
+  padding-right: 10px;
+  /* Asegurar alineación vertical */
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.window-collapsed .window-controls {
+  /* Colocar los controles a la izquierda */
+  position: static;
+  transform: none;
+  margin-right: 10px;
+  /* Asegurar alineación vertical */
+  display: flex;
+  align-items: center;
+}
+
+.window-collapsed:hover {
+  background-color: rgba(0, 255, 255, 0.2) !important;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Ventana maximizada */
+.window-maximized {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  transform: none !important;
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  z-index: 999 !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.window-maximized .window-content {
+  padding: 40px;
+  height: calc(100vh - 80px);
+}
+
+.window-maximized .scroll-container {
+  height: calc(100vh - 80px);
+}
+
+/* Mejoras para el menú */
+.window-collapsed .window-header {
+  padding: 10px 15px;
+}
+
+/* Estilos adicionales para forzar la alineación vertical */
+.window-collapsed .window-header * {
+  vertical-align: middle;
+}

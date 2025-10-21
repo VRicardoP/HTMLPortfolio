@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Título principal del portfolio */
+.main-title {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: whitesmoke;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+  z-index: 50;
+  user-select: none;
+  pointer-events: none;
+  font-family: 'Courier New', monospace;
+}
+
+/* Cursor parpadeante tipo terminal */
+.terminal-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background-color: #00ffff;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+/* Animación del cursor parpadeante */
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Efecto de escritura de máquina de escribir */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* Contenedor para el efecto de máquina de escribir */
+.typewriter-container {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  color: #00ffff;
+  font-family: 'Courier New', monospace;
+}
+
+/* Responsive design para pantallas pequeñas */
+@media (max-width: 768px) {
+  .window-collapsed {
+    width: 140px !important;
+    height: 35px !important;
+  }
+
+  .window-collapsed .window-title {
+    font-size: 12px;
+  }
+
+  .floating-window:not(.window-collapsed) {
+    width: 90vw !important;
+    height: 70vh !important;
+    max-width: 400px;
+    max-height: 500px;
+  }
+}
+
+/* Transiciones suaves para todos los estados */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

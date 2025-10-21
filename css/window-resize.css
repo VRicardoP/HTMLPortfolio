@@ -1,0 +1,94 @@
+/* Estilos para los controladores de redimensionamiento */
+.resize-handle {
+  position: absolute;
+  background-color: transparent;
+  z-index: 101;
+}
+
+/* Controlador de esquina inferior derecha */
+.resize-handle-se {
+  width: 15px;
+  height: 15px;
+  bottom: 0;
+  right: 0;
+  cursor: nwse-resize;
+}
+
+/* Controlador de esquina inferior izquierda */
+.resize-handle-sw {
+  width: 15px;
+  height: 15px;
+  bottom: 0;
+  left: 0;
+  cursor: nesw-resize;
+}
+
+/* Controlador de esquina superior derecha */
+.resize-handle-ne {
+  width: 15px;
+  height: 15px;
+  top: 0;
+  right: 0;
+  cursor: nesw-resize;
+}
+
+/* Controlador de esquina superior izquierda */
+.resize-handle-nw {
+  width: 15px;
+  height: 15px;
+  top: 0;
+  left: 0;
+  cursor: nwse-resize;
+}
+
+/* Controlador de borde derecho */
+.resize-handle-e {
+  width: 7px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  cursor: ew-resize;
+}
+
+/* Controlador de borde izquierdo */
+.resize-handle-w {
+  width: 7px;
+  height: 7px;
+  top: 0;
+  left: 0;
+  cursor: ew-resize;
+}
+
+/* Controlador de borde superior */
+.resize-handle-n {
+  width: 100%;
+  height: 7px;
+  top: 0;
+  left: 0;
+  cursor: ns-resize;
+}
+
+/* Controlador de borde inferior */
+.resize-handle-s {
+  width: 100%;
+  height: 7px;
+  bottom: 0;
+  left: 0;
+  cursor: ns-resize;
+}
+
+/* Estilo para indicar visualmente la zona de redimensionamiento al hacer hover */
+.resize-handle:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+/* ocultar los controladores de redimensionamiento cuando la ventana está minimizada */
+.window-collapsed .resize-handle {
+  display: none !important;
+  /* pointer-events: none !important; */
+}

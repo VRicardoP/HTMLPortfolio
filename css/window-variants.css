@@ -1,0 +1,20 @@
+/* Estilos para múltiples ventanas */
+.cv-window {
+  width: 450px;
+  height: 550px;
+}
+
+.portfolio-window {
+  width: 500px;
+  height: 400px;
+}
+
+.skills-window {
+  width: 300px;
+  height: 400px;
+}
+
+.contact-window {
+  width: 350px;
+  height: 250px;
+}
