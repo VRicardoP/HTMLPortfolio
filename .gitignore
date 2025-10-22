@@ -10,8 +10,9 @@ pnpm-debug.log*
 node_modules/
 
 # Carpetas que pediste ignorar explícitamente
-/React/
+/React0/
 /No usados/
+/ReactPortfolio/
 
 # Carpetas de build y distribución
 /dist/
